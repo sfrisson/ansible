@@ -1,0 +1,13 @@
+- hosts: all
+
+  # define variables.
+  vars:
+    epelReleaseMajorVersion: 7
+    epelReleaseMinorVersion: 8
+
+  tasks:
+    - name: add epel repo
+      yum_repository:
+        name: epel_repo
+        description: EPEL YUM repo
+        baseurl:  http://dl.fedoraproject.org/pub/epel/{{epelReleaseMajorVersion}}/x86_64/
