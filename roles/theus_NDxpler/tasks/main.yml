@@ -1,0 +1,6 @@
+---
+# tasks file for /home/ansible_master/ansible/roles/new_machine
+- import_tasks: install.yml
+- import_tasks: user.yml
+- import_task: configure.yml
+- import_task: service.yml

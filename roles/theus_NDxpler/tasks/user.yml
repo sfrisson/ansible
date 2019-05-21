@@ -1,0 +1,21 @@
+---
+
+- hosts: all 
+  tasks:
+  - name: test connection
+    ping:
+  - name: create group
+    group:
+        name: prometheus
+        state: present
+  - name: create user
+    user:
+        name: prometheus
+        group: prometheus
+        createhome: no
+        system: yes
+        state: present
+  - name: create opt directory for prometheus
+    file:
+        path: /opt/prometheus
+        state: directory
