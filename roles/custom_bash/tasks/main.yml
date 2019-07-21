@@ -1,0 +1,12 @@
+---
+- name: custom bash
+  hosts: redhat
+
+  tasks:
+    - name: updating bash template
+      copy:
+        src: /home/ansible_master/ansible/roles/custom_bash/files/custom_env.sh
+        dest: /etc/profile.d
+        owner: root
+        group: root
+        mode: 0644
